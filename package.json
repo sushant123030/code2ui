@@ -1,0 +1,28 @@
+{
+  "name": "UInspire",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "npm run start:backend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "lint": "cd frontend && npm run lint",
+    "audit:fix": "npm run audit:fix:frontend && npm run audit:fix:backend",
+    "audit:fix:frontend": "cd frontend && npm audit fix",
+    "audit:fix:backend": "cd backend && npm audit fix"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "framer-motion": "^12.23.16"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
