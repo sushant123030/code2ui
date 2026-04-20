@@ -148,7 +148,7 @@ router.post('/generate-and-save', authenticateToken, async (req, res) => {
         res.status(201).json({ html: generatedResult, projectId: project._id });
     } catch (error) {
         console.error('Generation Error:', error);
-        res.status(500).json({ message: 'Failed to generate and save project.', error: error.message });
+        res.status(500).json({ message: error.message || 'Failed to generate and save project.' });
     }
 });
 

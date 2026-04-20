@@ -57,6 +57,7 @@ export const AppContextProvider = ({ children }) => {
           setToken(null);
           setIsAuthenticated(false);
           router.push("/login");
+          return; // Exit without throwing error
         }
 
         const message =
