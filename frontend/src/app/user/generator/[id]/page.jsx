@@ -210,10 +210,13 @@ export default function GeneratorPage() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(
+        const errorMessage =
           errorData.message ||
-            `API request failed with status ${response.status}`,
-        );
+          `API request failed with status ${response.status}`;
+        setError(errorMessage);
+        setCode("");
+        setPreview(DEFAULT_PREVIEW);
+        return;
       }
 
       const data = await response.json();
@@ -221,7 +224,10 @@ export default function GeneratorPage() {
         typeof data === "string" ? data : data?.html || data?.code || "";
 
       if (!generatedCode.trim()) {
-        throw new Error("No valid code returned from API");
+        setError("No valid code returned from API");
+        setCode("");
+        setPreview(DEFAULT_PREVIEW);
+        return;
       }
 
       setCode(generatedCode);
