@@ -2,6 +2,10 @@
   "name": "UInspire",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "install:all": "npm install && npm run install:backend && npm run install:frontend",
     "install:backend": "cd backend && npm install",
