@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";

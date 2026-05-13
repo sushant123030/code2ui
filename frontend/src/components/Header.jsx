@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAppContext } from "../context/AppContext";
 import { useRouter, usePathname } from "next/navigation";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import Button from "./Button";
 

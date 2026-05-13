@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { FiGithub, FiTwitter, FiLinkedin, FiMail } from "react-icons/fi";
 import Link from "next/link";
 

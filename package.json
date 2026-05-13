@@ -2,15 +2,11 @@
   "name": "uinspire",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
-    "install:all": "npm install && npm run install:backend && npm run install:frontend",
-    "install:backend": "cd backend && npm install",
-    "install:frontend": "cd frontend && npm install",
-    "build": "npm run build:frontend",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend && npm install --legacy-peer-deps",
+    "install:frontend": "cd frontend && npm install --legacy-peer-deps",
+    "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
@@ -19,13 +15,8 @@
     "start:frontend": "cd frontend && npm start",
     "lint": "cd frontend && npm run lint",
     "audit:fix": "npm run audit:fix:frontend && npm run audit:fix:backend",
-    "audit:fix:frontend": "cd frontend && npm audit fix",
-    "audit:fix:backend": "cd backend && npm audit fix"
-  },
-  "dependencies": {
-    "@monaco-editor/react": "^4.7.0",
-    "framer-motion": "^12.23.16",
-    "next": "^16.1.1"
+    "audit:fix:frontend": "cd frontend && npm audit fix --legacy-peer-deps",
+    "audit:fix:backend": "cd backend && npm audit fix --legacy-peer-deps"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"
